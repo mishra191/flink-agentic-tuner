@@ -1,0 +1,20 @@
+{
+  "scenario": "bursty",
+  "controller": "rules",
+  "minutes": 15.0,
+  "freshness_slo_s": 120,
+  "cooldown_s": 240,
+  "verify_s": 120,
+  "outage": null,
+  "job_config": {
+    "flink.parallelism": 2,
+    "flink.checkpoint.interval.ms": 10000,
+    "sink.bucket.strategy": "symbol",
+    "sink.rolling.max.part.mb": 128,
+    "sink.rolling.interval.min": 15,
+    "kafka.bootstrap.servers": "kafka:19092",
+    "kafka.topic": "trades-bursty-rules-20261025t182253",
+    "kafka.group.id": "bursty__rules__20261025T182253",
+    "output.path": "file:///tmp/flink-tuner-eval/output/bursty__rules__20261025T182253"
+  }
+}

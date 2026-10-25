@@ -1,0 +1,16 @@
+{"ts": "2026-10-25T12:37:49Z", "kind": "decision", "observation": "interval=240000ms staleness=Nones median_file_kb=None", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:38:49Z", "kind": "decision", "observation": "interval=240000ms staleness=Nones median_file_kb=None", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:39:49Z", "kind": "decision", "observation": "interval=240000ms staleness=Nones median_file_kb=None", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:40:52Z", "kind": "action", "action": "reconfigure", "changes": {"flink.checkpoint.interval.ms": 90000}, "reason": "rule: interval=240000ms staleness=5s median_file_kb=22.5", "old_job": "c6da7b9034efa858022af6c0afea3783", "new_job": "14c51c3d31b080db516c1b856dd46e9c", "savepoint": "file:/tmp/flink-tuner-eval/savepoints/savepoint-c6da7b-028a9f351906"}
+{"ts": "2026-10-25T12:41:52Z", "kind": "decision", "observation": "interval=90000ms staleness=48s median_file_kb=2.7", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:42:52Z", "kind": "verified", "changes": {"flink.checkpoint.interval.ms": 90000}, "health": {"job_id": "14c51c3d31b080db516c1b856dd46e9c", "state": "RUNNING", "restarts": 0.0, "failed_checkpoints": 0, "kafka_lag": 0.0}}
+{"ts": "2026-10-25T12:42:52Z", "kind": "decision", "observation": "interval=90000ms staleness=18s median_file_kb=7.6", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:43:52Z", "kind": "decision", "observation": "interval=90000ms staleness=78s median_file_kb=7.6", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:44:52Z", "kind": "decision", "observation": "interval=90000ms staleness=48s median_file_kb=12.2", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:45:52Z", "kind": "decision", "observation": "interval=90000ms staleness=18s median_file_kb=12.0", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:46:52Z", "kind": "decision", "observation": "interval=90000ms staleness=78s median_file_kb=12.0", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:47:52Z", "kind": "decision", "observation": "interval=90000ms staleness=48s median_file_kb=11.9", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:48:52Z", "kind": "decision", "observation": "interval=90000ms staleness=18s median_file_kb=11.9", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:49:53Z", "kind": "decision", "observation": "interval=90000ms staleness=79s median_file_kb=11.9", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:50:53Z", "kind": "decision", "observation": "interval=90000ms staleness=49s median_file_kb=11.9", "decision": "no_action", "reasoning": "rules not triggered"}
+{"ts": "2026-10-25T12:51:53Z", "kind": "decision", "observation": "interval=90000ms staleness=19s median_file_kb=11.9", "decision": "no_action", "reasoning": "rules not triggered"}

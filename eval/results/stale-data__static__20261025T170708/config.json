@@ -1,0 +1,20 @@
+{
+  "scenario": "stale-data",
+  "controller": "static",
+  "minutes": 15.0,
+  "freshness_slo_s": 120,
+  "cooldown_s": 240,
+  "verify_s": 120,
+  "outage": null,
+  "job_config": {
+    "flink.parallelism": 2,
+    "flink.checkpoint.interval.ms": 240000,
+    "sink.bucket.strategy": "symbol",
+    "sink.rolling.max.part.mb": 128,
+    "sink.rolling.interval.min": 15,
+    "kafka.bootstrap.servers": "kafka:19092",
+    "kafka.topic": "trades-stale-data-static-20261025t170708",
+    "kafka.group.id": "stale-data__static__20261025T170708",
+    "output.path": "file:///tmp/flink-tuner-eval/output/stale-data__static__20261025T170708"
+  }
+}

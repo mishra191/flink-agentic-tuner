@@ -1,0 +1,20 @@
+{
+  "scenario": "bursty",
+  "controller": "agent",
+  "minutes": 15,
+  "freshness_slo_s": 120,
+  "cooldown_s": 240,
+  "verify_s": 120,
+  "outage": null,
+  "job_config": {
+    "flink.parallelism": 2,
+    "flink.checkpoint.interval.ms": 10000,
+    "sink.bucket.strategy": "symbol",
+    "sink.rolling.max.part.mb": 128,
+    "sink.rolling.interval.min": 15,
+    "kafka.bootstrap.servers": "kafka:19092",
+    "kafka.topic": "trades-bursty-agent-20261025t192348",
+    "kafka.group.id": "bursty__agent__20261025T192348",
+    "output.path": "file:///tmp/flink-tuner-eval/output/bursty__agent__20261025T192348"
+  }
+}

@@ -1,0 +1,52 @@
+# Single-node Kafka (KRaft) + Flink 1.19 session cluster for the experiments.
+# /tmp/flink-tuner-eval is mounted at the same path inside the Flink containers, so output
+# and savepoint paths reported by Flink are also valid on the host where the agent runs.
+
+services:
+  kafka:
+    image: apache/kafka:3.7.0
+    ports:
+      - "9092:9092"
+    environment:
+      CLUSTER_ID: "flink-tuner-eval-cluster"
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:19092,PLAINTEXT_HOST://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:19092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 4
+      KAFKA_HEAP_OPTS: "-Xms384m -Xmx384m"
+
+  jobmanager:
+    image: flink:1.19.1-java17
+    command: jobmanager
+    ports:
+      - "8081:8081"
+    environment:
+      FLINK_PROPERTIES: |
+        jobmanager.rpc.address: jobmanager
+        jobmanager.memory.process.size: 900m
+        state.savepoints.dir: file:///tmp/flink-tuner-eval/savepoints
+        web.upload.dir: /tmp/flink-tuner-eval/jars
+    volumes:
+      - /tmp/flink-tuner-eval:/tmp/flink-tuner-eval
+
+  taskmanager:
+    image: flink:1.19.1-java17
+    command: taskmanager
+    depends_on:
+      - jobmanager
+    environment:
+      FLINK_PROPERTIES: |
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 4
+        taskmanager.memory.process.size: 1600m
+    volumes:
+      - /tmp/flink-tuner-eval:/tmp/flink-tuner-eval

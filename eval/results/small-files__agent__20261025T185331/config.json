@@ -1,0 +1,20 @@
+{
+  "scenario": "small-files",
+  "controller": "agent",
+  "minutes": 15,
+  "freshness_slo_s": 120,
+  "cooldown_s": 240,
+  "verify_s": 120,
+  "outage": null,
+  "job_config": {
+    "flink.parallelism": 2,
+    "flink.checkpoint.interval.ms": 5000,
+    "sink.bucket.strategy": "symbol_hour",
+    "sink.rolling.max.part.mb": 128,
+    "sink.rolling.interval.min": 15,
+    "kafka.bootstrap.servers": "kafka:19092",
+    "kafka.topic": "trades-small-files-agent-20261025t185331",
+    "kafka.group.id": "small-files__agent__20261025T185331",
+    "output.path": "file:///tmp/flink-tuner-eval/output/small-files__agent__20261025T185331"
+  }
+}

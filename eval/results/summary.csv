@@ -1,0 +1,13 @@
+scenario,controller,minutes,max_sample_gap_s,valid,files_committed,files_per_min,median_file_kb,median_rows_per_file,staleness_p50_s,staleness_p95_s,slo_violation_pct,max_kafka_lag,files_on_disk_end,restarts_by_controller,compactions,rollbacks,escalations,final_checkpoint_interval_ms,events_sent,rows_committed
+small-files,static,14.9,15.4,True,3211,215.1,1.0,3,3.2,5.4,0.0,0,3211,0,0,0,0,5000,17380,17236
+small-files,rules,14.9,15.3,True,1774,119.0,1.0,5.0,5.6,20.1,0.0,0,1774,4,0,1,0,40000,16974,16298
+small-files,agent,14.9,15.3,True,459,30.8,1.0,5,24.6,54.3,0.0,0,38,2,40,0,0,60000,16922,16452
+stale-data,static,14.9,15.2,True,80,5.4,22.5,1411.5,117.7,223.7,46.4,0,80,0,0,0,0,240000,255300,210810
+stale-data,rules,14.9,15.2,True,200,13.4,10.3,602.5,38.4,81.4,0.0,0,200,1,0,0,0,90000,254070,234240
+stale-data,agent,14.9,15.2,True,320,21.5,7.5,422.5,34.5,69.5,0.0,0,299,2,2,0,0,90000,253680,250050
+bursty,static,14.9,15.4,True,1780,119.5,1.3,22.0,5.7,10.1,0.0,0,1780,0,0,0,0,10000,478825,476105
+bursty,rules,14.9,15.2,True,1000,67.2,1.5,31.0,10.2,35.7,0.0,0,1000,4,0,1,0,80000,481470,476340
+bursty,agent,14.9,15.2,True,480,32.3,5.9,330.5,29.8,59.1,0.0,0,344,1,9,0,0,60000,486685,482895
+broker-outage,static,14.9,15.2,True,219,14.7,5.8,305,37.1,244.0,21.8,0,219,0,0,0,0,60000,170640,162040
+broker-outage,rules,14.9,15.2,True,280,18.8,4.7,241.5,38.7,183.4,14.3,0,280,3,0,0,0,90000,169160,159760
+broker-outage,agent,14.9,15.2,True,240,16.1,5.6,300.5,42.2,228.5,19.6,0,240,0,0,0,2,60000,169060,167920

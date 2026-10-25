@@ -1,0 +1,35 @@
+{
+  "action_times": [
+    1792931024.0035222,
+    1792931270.330712,
+    1792931513.54691,
+    1792931756.968226
+  ],
+  "pending_verification": {
+    "job_id": "cd579407786ae8d31070536e5fedfbd1",
+    "deadline": 1792931876.969752,
+    "changes": {
+      "flink.checkpoint.interval.ms": 40000
+    },
+    "baseline": {
+      "restarts": 0,
+      "failed_checkpoints": 0,
+      "kafka_lag": 0.0
+    },
+    "rollback": {
+      "savepoint": "file:/tmp/flink-tuner-eval/savepoints/savepoint-d7d077-8a884583bad3",
+      "config": {
+        "flink.parallelism": "2",
+        "sink.rolling.interval.min": "15",
+        "sink.rolling.max.part.mb": "128",
+        "flink.max.parallelism": "128",
+        "sink.bucket.strategy": "symbol_hour",
+        "kafka.bootstrap.servers": "kafka:19092",
+        "output.path": "file:///tmp/flink-tuner-eval/output/small-files__rules__20261025T175237",
+        "kafka.group.id": "small-files__rules__20261025T175237",
+        "kafka.topic": "trades-small-files-rules-20261025t175237",
+        "flink.checkpoint.interval.ms": "20000"
+      }
+    }
+  }
+}

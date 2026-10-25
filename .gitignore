@@ -1,0 +1,28 @@
+# Java / Maven
+target/
+*.class
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Agent runtime state (machine-specific; regenerated on each run)
+/agent/agent_state.json
+/agent/decisions.jsonl
+
+# Pipeline output from local runs
+output-parquet/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Secrets
+.env

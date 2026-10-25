@@ -1,0 +1,34 @@
+{
+  "action_times": [
+    1792933747.981337,
+    1792934231.4075918,
+    1792934474.571579
+  ],
+  "pending_verification": {
+    "job_id": "72cf3f7fdc55f197cd4ef5d76c344e95",
+    "deadline": 1792934594.572035,
+    "changes": {
+      "flink.checkpoint.interval.ms": 90000
+    },
+    "baseline": {
+      "restarts": 0,
+      "failed_checkpoints": 0,
+      "kafka_lag": 0.0
+    },
+    "rollback": {
+      "savepoint": "file:/tmp/flink-tuner-eval/savepoints/savepoint-25d57e-76005280f0f5",
+      "config": {
+        "flink.parallelism": "2",
+        "sink.rolling.interval.min": "15",
+        "sink.rolling.max.part.mb": "128",
+        "flink.max.parallelism": "128",
+        "sink.bucket.strategy": "symbol",
+        "kafka.bootstrap.servers": "kafka:19092",
+        "output.path": "file:///tmp/flink-tuner-eval/output/broker-outage__rules__20261025T183801",
+        "kafka.group.id": "broker-outage__rules__20261025T183801",
+        "kafka.topic": "trades-broker-outage-rules-20261025t183801",
+        "flink.checkpoint.interval.ms": "45000"
+      }
+    }
+  }
+}

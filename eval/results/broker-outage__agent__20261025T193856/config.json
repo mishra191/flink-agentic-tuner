@@ -1,0 +1,23 @@
+{
+  "scenario": "broker-outage",
+  "controller": "agent",
+  "minutes": 15,
+  "freshness_slo_s": 120,
+  "cooldown_s": 240,
+  "verify_s": 120,
+  "outage": {
+    "start_s": 300,
+    "duration_s": 240
+  },
+  "job_config": {
+    "flink.parallelism": 2,
+    "flink.checkpoint.interval.ms": 60000,
+    "sink.bucket.strategy": "symbol",
+    "sink.rolling.max.part.mb": 128,
+    "sink.rolling.interval.min": 15,
+    "kafka.bootstrap.servers": "kafka:19092",
+    "kafka.topic": "trades-broker-outage-agent-20261025t193856",
+    "kafka.group.id": "broker-outage__agent__20261025T193856",
+    "output.path": "file:///tmp/flink-tuner-eval/output/broker-outage__agent__20261025T193856"
+  }
+}
